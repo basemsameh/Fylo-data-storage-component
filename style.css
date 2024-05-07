@@ -1,0 +1,232 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* ### Primary */
+  --Gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%);
+  /* ### Neutral */
+  --Pale-Blue: hsl(243, 100%, 93%);
+  --Grayish-Blue: hsl(229, 7%, 55%);
+  --Dark-Blue: hsl(228, 56%, 26%);
+  --Very-Dark-Blue: hsl(229, 57%, 11%);
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  background-color: var(--Very-Dark-Blue);
+  height: 95vh;
+}
+
+main {
+  width: 375px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 20px;
+  background-image: url(images/bg-mobile.png);
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+main section {
+  background-color: var(--Dark-Blue);
+  padding: 35px;
+  margin-bottom: 20px;
+}
+
+main section:nth-of-type(1) {
+  border-radius: 10px 80px 10px 10px;
+  margin-top: 120px;
+  height: 200px;
+}
+
+main section > img {
+  width: 60%;
+}
+
+main section figure {
+  display: flex;
+  justify-content: space-between;
+  width: 65%;
+  margin-top: 30px;
+}
+
+main section figure img {
+  background-color: var(--Very-Dark-Blue);
+  padding: 11px 14px;
+  border-radius: 10px;
+  height: fit-content;
+  width: 60px;
+}
+
+main section figure img:nth-of-type(1) {
+  width: 50px;
+  padding: 12px 16px;
+}
+
+main section figure img:nth-of-type(2) {
+  width: 50px;
+  padding: 12px 12px;
+}
+
+/* Section 2 */
+
+main section:nth-of-type(2) {
+  padding: 30px;
+  height: 160px;
+  border-radius: 10px;
+  position: relative;
+}
+
+main section p {
+  font-size: 14px;
+  color: var(--Pale-Blue);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+main section p:nth-of-type(1) span {
+  opacity: 1;
+  color: white;
+  font-weight: bold;
+}
+
+main section .used {
+  height: 17px;
+  position: relative;
+  border-radius: 15px;
+  border: 2px solid;
+  background-color: var(--Very-Dark-Blue);
+}
+
+main section .used .gradient {
+  height: 100%;
+  width: 80%;
+  position: relative;
+  border-radius: 15px;
+  background-image: linear-gradient(
+    to right,
+    hsl(6, 100%, 80%),
+    hsl(335, 100%, 65%)
+  );
+}
+
+main section .used .gradient::before {
+  content: "";
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: white;
+  right: 2px;
+  top: 1px;
+}
+
+main section .used::before {
+  content: "0 GB";
+  position: absolute;
+  color: white;
+  top: 30px;
+  left: 0;
+  font-size: 11px;
+}
+
+main section .used::after {
+  content: "1000 GB";
+  position: absolute;
+  color: white;
+  top: 30px;
+  right: 0;
+  font-size: 11px;
+}
+
+main section p:nth-of-type(2) {
+  position: absolute;
+  bottom: -35%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--Grayish-Blue);
+  background-color: white;
+  padding: 15px;
+  font-size: 13px;
+  border-radius: 10px;
+  width: 180px;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 1;
+}
+
+main section p:nth-of-type(2) span {
+  font-weight: bold;
+  font-size: 36px;
+  color: black;
+}
+
+@media (min-width: 1000px) {
+  body {
+    background-image: url(images/bg-desktop.png);
+    background-repeat: repeat-x;
+    background-position: bottom left;
+    background-size: 100% 60%;
+    height: 100vh;
+  }
+
+  main {
+    width: 980px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 420px;
+    margin: 50px auto;
+    background-image: none;
+  }
+
+  main section {
+    margin-bottom: 0;
+  }
+
+  main section figure {
+    width: 190px;
+  }
+
+  main section > img {
+    width: 165px;
+  }
+
+  main section:nth-of-type(1) {
+    margin-top: 0;
+    width: 40%;
+  }
+
+  main section:nth-of-type(2) {
+    width: 55%;
+    margin-top: 40px;
+    z-index: -2;
+  }
+
+  main section p:nth-of-type(1) {
+    text-align: left;
+  }
+
+  main section p:nth-of-type(2) {
+    bottom: 120px;
+    left: 390px;
+  }
+
+  main section:nth-of-type(2)::after {
+    content: "";
+    position: absolute;
+    height: 72.4px;
+    width: 35px;
+    background-color: white;
+    bottom: 125px;
+    left: 444.5px;
+    z-index: -1;
+    transform: skew(0, 40deg);
+  }
+}
